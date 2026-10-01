@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <!-- Cart Servlet -->
+    <servlet>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>murach.cart.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CartServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <!-- Login / Register Servlet -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>murach.controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- VNPay Payment Gateway Servlet -->
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>murach.controller.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/payment</url-pattern>
+    </servlet-mapping>
+
+    <!-- VNPay Return Callback Servlet -->
+    <servlet>
+        <servlet-name>PaymentReturnServlet</servlet-name>
+        <servlet-class>murach.controller.PaymentReturnServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentReturnServlet</servlet-name>
+        <url-pattern>/payment-return</url-pattern>
+    </servlet-mapping>
+
+    <!-- Sending Email Servlet via Brevo -->
+    <servlet>
+        <servlet-name>SendingEmailServlet</servlet-name>
+        <servlet-class>murach.controller.SendingEmailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendingEmailServlet</servlet-name>
+        <url-pattern>/sendEmail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendingEmailServlet</servlet-name>
+        <url-pattern>/sending-email</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
