@@ -16,40 +16,24 @@
   </properties>
 
   <dependencies>
-    <!-- Jakarta Servlet API 5.0 (Jakarta EE 9 / Tomcat 10.0.x / Java 8-10) -->
+    <!-- Jakarta Servlet API 6.0 for Tomcat 10.1.x -->
     <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
-      <version>5.0.0</version>
+      <version>6.0.0</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- Jakarta JSP API 3.0 (Jakarta EE 9 / Tomcat 10.0.x / Java 8-10) -->
-    <dependency>
-      <groupId>jakarta.servlet.jsp</groupId>
-      <artifactId>jakarta.servlet.jsp-api</artifactId>
-      <version>3.0.0</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- Jakarta Expression Language 4.0 API (provided by Tomcat 10) -->
-    <dependency>
-      <groupId>jakarta.el</groupId>
-      <artifactId>jakarta.el-api</artifactId>
-      <version>4.0.0</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <!-- Jakarta Standard Tag Library (JSTL) 2.0 API & Implementation (tương thích hoàn toàn Java 8-10 & Tomcat 10.0) -->
+    <!-- Jakarta JSTL 3.0 for Tomcat 10.1.x (matches jakarta.tags.core URI) -->
     <dependency>
       <groupId>jakarta.servlet.jsp.jstl</groupId>
       <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-      <version>2.0.0</version>
+      <version>3.0.0</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.web</groupId>
       <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-      <version>2.0.0</version>
+      <version>3.0.1</version>
     </dependency>
 
     <!-- Brevo (Sendinblue) API SDK -->
@@ -78,7 +62,6 @@
 
   <build>
     <finalName>ch07_ex3_cart</finalName>
-    <!-- Trỏ đúng thư mục chứa code Java của NetBeans -->
     <sourceDirectory>src/java</sourceDirectory>
     
     <plugins>
@@ -99,7 +82,6 @@
         <artifactId>maven-war-plugin</artifactId>
         <version>3.4.0</version>
         <configuration>
-          <!-- Báo cho Maven biết thư mục web nằm ở 'web' chứ không phải 'src/main/webapp' -->
           <warSourceDirectory>web</warSourceDirectory>
           <failOnMissingWebXml>false</failOnMissingWebXml>
         </configuration>
